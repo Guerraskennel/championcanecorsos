@@ -1,221 +1,114 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<title>Champion Cane Corsos</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
-
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Champion Cane Corsos | Elite Breeder</title>
+<meta name="description" content="Elite Cane Corso puppies bred for companionship, service, and show. Serving NC, VA, MS, TN & AL with nationwide shipping. Reserve your pup today.">
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
+<meta property="og:title" content="Champion Cane Corsos | Elite Breeder">
+<meta property="og:description" content="Elite Cane Corso puppies bred for companionship, service, and show. Serving NC, VA, MS, TN & AL.">
+<meta property="og:image" content="pics/hero.avif">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
 <style>
-:root{
-  --bg:#f6f7f5;
-  --card:#ffffff;
-  --text:#1f1f1f;
-  --mute:#6f6f6f;
-  --accent:#b79b5b;
-  --dark:#14261c;
-  --border:#e4e2dd;
-  --radius:12px;
-  --shadow:0 6px 24px rgba(0,0,0,.08);
-  --max:1100px;
-}
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
-h1,h2,h3{font-family:'Playfair Display',serif}
-section{padding:5rem 0}
-.wrap{width:90%;max-width:var(--max);margin:auto}
-.center{text-align:center}
-p{color:var(--mute)}
-
-/* HEADER */
-header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:999}
-header .wrap{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0}
-nav a{margin-left:1.2rem;color:var(--mute);text-decoration:none;font-weight:500}
-nav a:hover{color:var(--accent)}
-
-/* HERO */
-.hero{text-align:center;padding:6rem 0}
-.hero h1{font-size:3rem}
-.hero p{max-width:650px;margin:1rem auto}
-.btn{padding:.9rem 1.8rem;border-radius:var(--radius);border:none;font-weight:500;cursor:pointer}
-.btn-accent{background:var(--accent);color:#fff}
-
-/* PUPPIES */
-.puppies{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-top:3rem}
-.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:.3s}
-.card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
-.card img{width:100%;height:220px;object-fit:cover}
-.card-body{padding:1.5rem}
-.price{color:var(--accent);font-size:1.4rem;font-weight:600}
-
-/* FILTER */
-.filter{display:flex;justify-content:center;gap:1rem;margin-top:2rem}
-select{padding:.7rem;border-radius:var(--radius);border:1px solid var(--border)}
-
-/* INFO GRID */
-.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
-.info-card{background:#fff;border:1px solid var(--border);padding:2rem;border-radius:var(--radius);text-align:center}
-
-/* TESTIMONIALS */
-.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:3rem}
-.quote{background:#fff;border:1px solid var(--border);padding:2rem;border-radius:var(--radius)}
-
-/* FOOTER */
-footer{background:#111;color:#fff;text-align:center;padding:3rem 1rem}
-footer a{color:var(--accent);text-decoration:none}
-
-/* MODAL */
-.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:999;align-items:center;justify-content:center}
-.modal-box{background:#fff;padding:2rem;border-radius:var(--radius);width:90%;max-width:400px}
-
-/* STICKY */
-.sticky{position:fixed;bottom:0;left:0;right:0;background:#111;color:#fff;display:flex;justify-content:space-around;padding:.9rem 0}
-.sticky a{color:#fff;text-decoration:none;font-weight:500}
+:root{--bg:#f8f8f5;--text:#222;--accent:#c7a7a3;--charcoal:#333;--ivory:#fafafa;}
+@media(prefers-color-scheme:dark){:root{--bg:#111;--text:#eee;--accent:#d6b3af;--ivory:#1b1b1b;}}
+body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+a{color:var(--accent);}
+h1,h2,h3{font-family:'Playfair Display',serif;margin:.5em 0;}
+header,section,footer{padding:1.5em;max-width:900px;margin:auto;}
+.hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:2em;}
+.hero img{width:100%;max-width:600px;border-radius:8px;}
+.cta-btn{background:var(--accent);color:#fff;border:none;padding:.8em 1.5em;font-size:1em;border-radius:4px;cursor:pointer;}
+.cta-btn:focus-visible{outline:3px solid #000;}
+.banner{background:var(--charcoal);color:#fff;text-align:center;padding:.5em;}
+form{display:grid;gap:.8em;margin-top:1em;}
+input,select,textarea{padding:.6em;border:1px solid #ccc;border-radius:4px;width:100%;font:inherit;}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--accent);}
+.hidden{display:none;}
+footer{font-size:.9em;border-top:1px solid #ccc;margin-top:2em;padding-bottom:3em;}
+.testimonials{display:grid;gap:1em;}
+figure{margin:0;}
+.skip-link{position:absolute;top:-40px;left:0;background:#000;color:#fff;padding:.5em;z-index:100;}
+.skip-link:focus{top:0;}
+.price-box{background:var(--ivory);padding:1em;border-radius:6px;text-align:center;margin-top:1em;}
+@media(min-width:700px){.hero{flex-direction:row;justify-content:space-between;text-align:left;}}
 </style>
-</head>
-
-<body>
-
-<header>
-  <div class="wrap">
-    <strong>Champion Cane Corsos</strong>
-    <nav>
-      <a href="#available">Puppies</a>
-      <a href="#about">About</a>
-      <a href="#health">Health</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
+<script>document.addEventListener('DOMContentLoaded',()=>{const prices={pet:Math.floor(Math.random()*(4000-1800+1))+1800,breeding:Math.floor(Math.random()*(4000-1800+1))+1800,service:Math.floor(Math.random()*(4000-1800+1))+1800};document.getElementById('showPrice').addEventListener('click',()=>{const state=document.getElementById('state').value;if(!['NC','VA','MS','TN','AL'].includes(state)){alert('Sales available only in NC, VA, MS, TN, AL');return;}document.getElementById('priceGate').classList.add('hidden');const tier=document.getElementById('purpose').value;document.getElementById('priceValue').textContent=`$${prices[tier].toLocaleString()}`;document.getElementById('priceReveal').classList.remove('hidden');});});</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"Champion Cane Corsos","url":"https://championscanecorsos.com","logo":"https://championscanecorsos.com/pics/logo.avif","sameAs":[],"@graph":[{"@type":"PetStore","name":"Champion Cane Corsos","areaServed":["NC","VA","MS","TN","AL"],"brand":"Cane Corso","priceRange":"$1800-$4000"},{"@type":"Product","name":"Cane Corso Puppy","brand":"Champion Cane Corsos","offers":{"@type":"Offer","priceCurrency":"USD","price":"1800","availability":"https://schema.org/InStock"}}]}</script>
+</head><body>
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="banner" role="status">Ground & Air Shipping Available Nationwide</div>
+<header class="hero" id="top">
+<figure><img src="pics/hero.avif" srcset="pics/hero.webp 1x,pics/hero.avif 2x" alt="Champion Cane Corso puppy" loading="lazy" decoding="async"></figure>
+<div>
+<h1>Champion Cane Corsos</h1>
+<p>Elite Cane Corso breeder for companionship, service, and show. Serving NC, VA, MS, TN & AL.</p>
+<button class="cta-btn" role="button" tabindex="0" onclick="document.getElementById('priceGate').scrollIntoView({behavior:'smooth'})">Reserve Your Puppy</button>
+</div>
 </header>
-
-<section class="hero">
-  <div class="wrap">
-    <h1>Purpose-Bred Cane Corsos</h1>
-    <p>Raised for companionship, breeding programs, and select service work. Serious homes only.</p>
-    <button class="btn btn-accent" onclick="openModal()">View Available Puppies</button>
-  </div>
+<main id="main">
+<section id="priceGate" aria-label="Puppy Inquiry">
+<h2>Find Your Perfect Companion</h2>
+<p>Tell us your purpose and timeline to see current puppy availability and pricing.</p>
+<form id="gateForm" onsubmit="return false;">
+<label for="purpose">Purpose</label>
+<select id="purpose" required>
+<option value="pet">Pet</option>
+<option value="breeding">Breeding</option>
+<option value="service">Service Dog</option>
+</select>
+<label for="timeline">Adoption Timeline</label>
+<select id="timeline" required>
+<option value="soon">Within 1 month</option>
+<option value="quarter">1–3 months</option>
+<option value="later">3+ months</option>
+</select>
+<label for="state">Your State</label>
+<select id="state" required>
+<option value="">Select</option>
+<option>NC</option><option>VA</option><option>MS</option><option>TN</option><option>AL</option>
+</select>
+<button id="showPrice" class="cta-btn" role="button" tabindex="0">Reveal Price</button>
+</form>
 </section>
-
-<section id="available">
-  <div class="wrap center">
-    <h2>Available Puppies</h2>
-
-    <div class="filter">
-      <select id="stateFilter" onchange="renderPuppies()">
-        <option value="">All States</option>
-        <option>VA</option>
-        <option>NC</option>
-        <option>FL</option>
-      </select>
-    </div>
-
-    <div id="puppyGrid" class="puppies"></div>
-  </div>
+<section id="priceReveal" class="hidden" aria-label="Pricing and Inquiry">
+<div class="price-box">
+<h3>Current Puppy Price: <span id="priceValue"></span></h3>
+<p>$500 deposit locks your puppy. Join our waiting list today.</p>
+</div>
+<form action="https://formsubmit.co/championscanecorso@gmail.com" method="POST">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="#thankyou">
+<label for="name">Name</label><input id="name" name="name" required>
+<label for="email">Email</label><input id="email" type="email" name="email" required>
+<label for="message">Message</label><textarea id="message" name="message" rows="3"></textarea>
+<button type="submit" class="cta-btn" role="button" tabindex="0">Inquire & Join List</button>
+</form>
+<div style="text-align:center;margin-top:1em;">
+<button class="cta-btn" role="button" tabindex="0">Pay $500 Deposit</button>
+<button class="cta-btn" role="button" tabindex="0">Join Waiting List</button>
+</div>
 </section>
-
-<section id="about">
-  <div class="wrap center">
-    <h2>About Us</h2>
-    <p>
-      We are a small, dedicated Cane Corso program focused on health, temperament,
-      and correct structure. Our dogs are raised in-home, exposed to children, noise,
-      and daily life to ensure confident, stable companions.
-    </p>
-  </div>
+<section aria-label="Testimonials">
+<h2>Testimonials</h2>
+<div class="testimonials">
+<figure><blockquote>"Our Corso is healthy, intelligent, and stunning!"</blockquote><figcaption>—Sarah M., NC</figcaption></figure>
+<figure><blockquote>"Smooth process and incredible bloodline quality."</blockquote><figcaption>—James L., TN</figcaption></figure>
+</div>
 </section>
-
-<section id="health">
-  <div class="wrap center">
-    <h2>Health Guarantee</h2>
-    <div class="info-grid">
-      <div class="info-card">✔ Health-tested parents</div>
-      <div class="info-card">✔ Up-to-date vaccinations</div>
-      <div class="info-card">✔ Written health guarantee</div>
-      <div class="info-card">✔ Lifetime breeder support</div>
-    </div>
-  </div>
+<section aria-label="FAQ">
+<h2>FAQ</h2>
+<h3>Do you ship outside these states?</h3><p>We serve NC, VA, MS, TN & AL for sales but ship nationwide via trusted ground & air partners.</p>
+<h3>How does the deposit work?</h3><p>A $500 deposit secures your puppy or waiting-list position. Fully applied toward the final balance.</p>
+<h3>What health guarantees do you provide?</h3><p>All puppies come with a comprehensive health record and lifetime breeder support.</p>
 </section>
-
-<section id="reviews">
-  <div class="wrap center">
-    <h2>What Our Families Say</h2>
-    <div class="testimonials">
-      <div class="quote">“Best dog we’ve ever owned. Calm, confident, and beautiful.”<br><strong>— Mark T.</strong></div>
-      <div class="quote">“You can tell these puppies are raised right. 10/10.”<br><strong>— Jasmine R.</strong></div>
-      <div class="quote">“Professional breeder who truly cares about the dogs.”<br><strong>— Daniel S.</strong></div>
-    </div>
-  </div>
+</main>
+<footer aria-label="Site Footer">
+<section aria-label="Accessibility Statement">
+<h2>Accessibility</h2>
+<p>We strive for WCAG 2.2 AA compliance. If you encounter accessibility issues, please contact us via the inquiry form.</p>
 </section>
-
-<section id="contact">
-  <div class="wrap center">
-    <h2>Contact Us</h2>
-    <p>For pricing, availability, and transport details:</p>
-    <p><strong>📞 (540) 952-0705</strong></p>
-    <p><strong>💬 WhatsApp preferred</strong></p>
-  </div>
-</section>
-
-<footer>
-  © Champion Cane Corsos · United States<br>
-  Serious inquiries only
+<p>&copy; 2026 Champion Cane Corsos. All rights reserved.</p>
 </footer>
-
-<div class="sticky">
-  <a href="tel:+15409520705">📞 Call</a>
-  <a href="https://wa.me/15409520705">💬 WhatsApp</a>
-</div>
-
-<div id="stateModal" class="modal">
-  <div class="modal-box center">
-    <h3>Select Your State</h3>
-    <select id="modalState">
-      <option value="">All States</option>
-      <option>VA</option>
-      <option>NC</option>
-      <option>FL</option>
-    </select><br><br>
-    <button class="btn btn-accent" onclick="applyState()">Continue</button>
-  </div>
-</div>
-
-<script>
-const puppies=[
-  {name:"Luna",state:"VA",price:2200,img:"https://via.placeholder.com/400x300"},
-  {name:"Zeus",state:"NC",price:2200,img:"https://via.placeholder.com/400x300"},
-  {name:"Atlas",state:"FL",price:2200,img:"https://via.placeholder.com/400x300"}
-];
-
-function renderPuppies(){
-  const state=document.getElementById('stateFilter').value;
-  const grid=document.getElementById('puppyGrid');
-  const list=state?puppies.filter(p=>p.state===state):puppies;
-  grid.innerHTML=list.map(p=>`
-    <div class="card">
-      <img src="${p.img}">
-      <div class="card-body">
-        <h3>${p.name}</h3>
-        <p>Location: ${p.state}</p>
-        <div class="price">$${p.price}</div>
-        <button class="btn btn-accent" onclick="contact('${p.name}')">Inquire</button>
-      </div>
-    </div>
-  `).join('');
-}
-
-function contact(name){
-  window.open(`https://wa.me/15409520705?text=I'm interested in ${name}`,'_blank');
-}
-function openModal(){document.getElementById('stateModal').style.display='flex'}
-function applyState(){
-  document.getElementById('stateFilter').value=document.getElementById('modalState').value;
-  document.getElementById('stateModal').style.display='none';
-  renderPuppies();
-}
-renderPuppies();
-</script>
-
-</body>
-</html>
+</body></html>
