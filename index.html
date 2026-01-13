@@ -1,229 +1,224 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Champion Cane Corsos – Elegant Kennel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ethically bred Cane Corso puppies. Purpose-bred for pet companions, breeding programs, and service work.">
+<meta charset="utf-8">
+<title>Champion Cane Corsos</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --bg:#f7f5f2;
-      --card:#ffffff;
-      --text:#222;
-      --mute:#7d7d7d;
-      --accent:#c9a096;
-      --border:#e5e1dd;
-      --radius:12px;
-      --max:1100px;
-      --shadow:0 6px 24px rgba(0,0,0,.08);
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7}
-    h1,h2,h3{font-family:'Playfair Display',serif}
-    section{padding:5rem 0}
-    .wrap{width:90%;max-width:var(--max);margin:auto}
-    img{max-width:100%;display:block}
+<style>
+:root{
+  --bg:#f5f6f4;
+  --card:#ffffff;
+  --text:#1f1f1f;
+  --mute:#6e6e6e;
+  --accent:#b89b5e;
+  --green:#1f3d2b;
+  --border:#e3e1dc;
+  --radius:12px;
+  --shadow:0 6px 22px rgba(0,0,0,.08);
+  --max:1100px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.7}
+h1,h2,h3{font-family:'Playfair Display',serif}
+section{padding:5rem 0}
+.wrap{width:90%;max-width:var(--max);margin:auto}
+.center{text-align:center}
 
-    /* HEADER */
-    header{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:99}
-    header .wrap{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0}
-    nav a{margin-left:1.5rem;color:var(--mute);text-decoration:none}
-    nav a:hover{color:var(--accent)}
+/* HERO */
+.hero{text-align:center;padding:6rem 0}
+.hero h1{font-size:3rem}
+.hero p{color:var(--mute);max-width:650px;margin:1rem auto}
 
-    /* HERO */
-    .hero{text-align:center;padding:6rem 0}
-    .hero h1{font-size:3rem;margin-bottom:1rem}
-    .hero p{max-width:650px;margin:auto;color:var(--mute);font-size:1.15rem}
-    .hero-btns{margin-top:2.5rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+/* BUTTONS */
+.btn{padding:.9rem 1.8rem;border-radius:var(--radius);border:none;font-weight:500;cursor:pointer}
+.btn-accent{background:var(--accent);color:#fff}
 
-    /* BUTTONS */
-    .btn{padding:.9rem 1.8rem;border-radius:var(--radius);border:none;font-weight:500;cursor:pointer}
-    .btn-accent{background:var(--accent);color:#fff}
-    .btn-ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
-    .btn:hover{opacity:.9}
+/* PURPOSE */
+.purpose-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:2rem;margin-top:3rem
+}
+.purpose-card{
+  background:var(--card);
+  border:1px solid var(--border);
+  padding:2rem;border-radius:var(--radius);
+  transition:.3s
+}
+.purpose-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
 
-    /* PURPOSE SECTION */
-    .purpose-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-      gap:2rem;
-      margin-top:3rem;
-    }
-    .purpose-card{
-      background:var(--card);
-      border:1px solid var(--border);
-      border-radius:var(--radius);
-      padding:2.2rem;
-      transition:.3s;
-    }
-    .purpose-card:hover{
-      transform:translateY(-4px);
-      box-shadow:var(--shadow);
-    }
-    .purpose-card h3{margin-bottom:.8rem}
-    .purpose-card p{color:var(--mute);font-size:.95rem}
-    .purpose-card ul{margin-top:1.2rem;padding-left:1.2rem;font-size:.9rem}
-    .purpose-card li{margin-bottom:.4rem}
+/* TRUST SECTION */
+.trust{background:var(--green);color:#fff}
+.trust-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:2rem;margin-top:3rem
+}
+.trust-card{
+  background:#fff;color:#222;
+  padding:2rem;border-radius:var(--radius);
+  box-shadow:var(--shadow)
+}
+.price{font-size:2.4rem;color:var(--accent);margin:1rem 0}
 
-    /* FILTERS */
-    .filter-bar{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
-    .filter-bar select{flex:1;min-width:180px;padding:.7rem;border-radius:var(--radius);border:1px solid var(--border)}
+/* BADGES */
+.badges{
+  display:flex;flex-wrap:wrap;gap:1rem;
+  justify-content:center;margin-top:2rem
+}
+.badge{
+  background:#fff;color:#222;
+  padding:.7rem 1.2rem;border-radius:999px;
+  font-size:.85rem;font-weight:500;
+  box-shadow:var(--shadow)
+}
 
-    .purpose-toggle{text-align:center;margin-bottom:2rem}
+/* REVIEWS */
+.review{font-size:.95rem;color:#444}
+.review strong{display:block;margin-top:.7rem}
 
-    /* PUPPY CARDS */
-    .puppies{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2rem}
-    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
-    .card img{height:250px;object-fit:cover}
-    .card-body{padding:1.5rem}
-    .badge{position:absolute;top:1rem;left:1rem;background:var(--accent);color:#fff;padding:.3rem .7rem;border-radius:var(--radius);font-size:.75rem}
-    .price{font-size:1.3rem;font-weight:600;margin:.4rem 0}
+/* FAQ */
+.faq{background:#fff}
+.faq-item{
+  border-bottom:1px solid var(--border);
+  padding:1.2rem 0;cursor:pointer
+}
+.faq-item h4{font-size:1rem}
+.faq-item p{display:none;color:var(--mute);margin-top:.6rem}
 
-    /* MODALS */
-    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999;align-items:center;justify-content:center}
-    .modal-content{background:#fff;padding:2rem;border-radius:var(--radius);width:90%;max-width:450px}
-    .close{float:right;font-size:1.4rem;cursor:pointer}
+/* FOOTER */
+footer{background:#111;color:#fff;text-align:center;padding:2.5rem 0;font-size:.9rem}
 
-    input,textarea,select{width:100%;padding:.8rem;margin-bottom:1rem;border-radius:var(--radius);border:1px solid var(--border)}
-    button[type=submit]{background:var(--accent);color:#fff;width:100%;padding:.8rem;border:none;border-radius:var(--radius)}
-
-    footer{background:#111;color:#fff;text-align:center;padding:2.5rem 0}
-  </style>
+/* STICKY CTA */
+.sticky{
+  position:fixed;bottom:0;left:0;right:0;
+  background:#111;color:#fff;
+  display:flex;justify-content:space-around;
+  padding:.8rem 0;z-index:999
+}
+.sticky a{color:#fff;text-decoration:none;font-weight:500}
+</style>
 </head>
 
 <body>
 
-<header>
-  <div class="wrap">
-    <div style="font-size:1.6rem;font-family:'Playfair Display',serif">Champion Cane Corsos</div>
-    <nav>
-      <a href="#available">Available</a>
-      <a href="#purpose">Purpose</a>
-      <a href="#goal">Goal</a>
-      <a href="https://www.facebook.com/share/1Bj8Pzsq4F/" target="_blank">Facebook</a>
-    </nav>
-  </div>
-</header>
-
+<!-- HERO -->
 <section class="hero">
   <div class="wrap">
-    <h1>Powerful. Loyal.<br>Correctly Bred Cane Corsos</h1>
-    <p>Purpose-bred for pet companions, breeding programs, and select service work — raised with structure, balance, and intention.</p>
-    <div class="hero-btns">
-      <a href="#available" class="btn btn-accent">Explore Puppies</a>
-      <a href="tel:+15409520705" class="btn btn-ghost">(540) 952-0705</a>
-    </div>
+    <h1>Purpose-Bred Cane Corsos</h1>
+    <p>Confident guardians raised for companionship, breeding programs, and select service work.</p>
+    <button class="btn btn-accent">View Available Puppies</button>
   </div>
 </section>
 
-<!-- PURPOSE SECTION -->
-<section id="purpose">
+<!-- PURPOSE -->
+<section>
   <div class="wrap">
-    <h2 class="center">Purpose-Bred for the Right Home</h2>
-    <p class="center" style="color:var(--mute);margin-top:.8rem">
-      Each puppy is evaluated for temperament, structure, and drive to ensure proper placement.
-    </p>
-
+    <h2 class="center">Placement Categories</h2>
     <div class="purpose-grid">
       <div class="purpose-card">
         <h3>Pet Companion</h3>
-        <p>Stable, confident Cane Corsos suited for family homes seeking loyalty and guardian presence.</p>
-        <ul>
-          <li>✔ Balanced temperament</li>
-          <li>✔ Home-raised environment</li>
-          <li>✔ Lifetime breeder support</li>
-        </ul>
+        <p>Stable, confident dogs raised in a family environment with proper exposure.</p>
       </div>
-
       <div class="purpose-card">
         <h3>Breeding Prospect</h3>
-        <p>Select puppies evaluated for structure and genetics for responsible breeding programs.</p>
-        <ul>
-          <li>✔ Structure & temperament reviewed</li>
-          <li>✔ Rights by approval only</li>
-          <li>✔ Mentorship available</li>
-        </ul>
+        <p>Selected puppies evaluated for structure, genetics, and temperament.</p>
       </div>
-
       <div class="purpose-card">
-        <h3>Service / Working Candidate</h3>
-        <p>Puppies with confidence, focus, and nerve strength suitable for advanced training paths.</p>
-        <ul>
-          <li>✔ ENS & early exposure</li>
-          <li>✔ Placement-based selection</li>
-          <li>✔ Temperament-first approach</li>
-        </ul>
+        <h3>Service / Working</h3>
+        <p>Carefully selected candidates with strong nerves and focus.</p>
       </div>
     </div>
   </div>
 </section>
 
-<section id="available">
+<!-- TRUST + PRICE + REVIEWS -->
+<section class="trust">
   <div class="wrap">
-    <h2 style="text-align:center">Available Puppies</h2>
+    <h2 class="center">Trusted Program · Transparent Pricing</h2>
 
-    <div class="filter-bar">
-      <select id="fState"><option value="">All States</option></select>
-      <select id="fGender"><option value="">Both Genders</option><option>Male</option><option>Female</option></select>
-      <select id="fColor"><option value="">All Colors</option><option>Straw (Fawn)</option><option>Black</option></select>
+    <div class="badges">
+      <div class="badge">Gold Standard Breeding</div>
+      <div class="badge">Health Guarantee</div>
+      <div class="badge">Nationwide Shipping</div>
+      <div class="badge">Lifetime Support</div>
     </div>
 
-    <div id="puppies" class="puppies"></div>
+    <div class="trust-grid">
+
+      <div class="trust-card">
+        <h3>Puppy Price</h3>
+        <div class="price">$2,200</div>
+        <ul>
+          <li>✔ Vet-checked & vaccinated</li>
+          <li>✔ Written health guarantee</li>
+          <li>✔ Ongoing breeder support</li>
+        </ul>
+      </div>
+
+      <div class="trust-card">
+        <h3>Verified Review</h3>
+        <p class="review">
+          “Professional, honest, and extremely knowledgeable. Our Corso arrived healthy and confident.”
+          <strong>— Marcus T., NC</strong>
+        </p>
+      </div>
+
+      <div class="trust-card">
+        <h3>Verified Review</h3>
+        <p class="review">
+          “You can tell these dogs are raised correctly. Temperament and structure are excellent.”
+          <strong>— Alisha R., VA</strong>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <div class="wrap">
+    <h2 class="center">Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <h4>Do you offer shipping?</h4>
+      <p>Yes, nationwide ground shipping is available with trusted pet transporters.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Is there a health guarantee?</h4>
+      <p>All puppies come with a written health guarantee and veterinary documentation.</p>
+    </div>
+
+    <div class="faq-item">
+      <h4>Do you sell to first-time owners?</h4>
+      <p>Yes, with education and proper placement to ensure long-term success.</p>
+    </div>
+
   </div>
 </section>
 
 <footer>
-  © Champion Cane Corsos · Virginia<br>
-  <a href="tel:+15409520705">(540) 952-0705</a>
+  © Champion Cane Corsos · Serious inquiries only
 </footer>
 
+<!-- STICKY CTA -->
+<div class="sticky">
+  <a href="tel:+15409520705">📞 Call</a>
+  <a href="https://wa.me/15409520705">💬 WhatsApp</a>
+</div>
+
 <script>
-const puppies=[
-  {name:"Luna",state:"VA",city:"Richmond",gender:"Female",color:"Straw (Fawn)",age:"9 weeks",price:1500,img:"pics/luna1.jpg"},
-  {name:"Zeus",state:"NC",city:"Charlotte",gender:"Male",color:"Black",age:"11 weeks",price:1500,img:"pics/zeus1.jpg"}
-];
-
-const states={VA:"Virginia",NC:"North Carolina"};
-const fState=document.getElementById('fState');
-const fGender=document.getElementById('fGender');
-const fColor=document.getElementById('fColor');
-
-Object.entries(states).forEach(([k,v])=>{
-  const o=document.createElement('option');
-  o.value=k;o.textContent=v;
-  fState.appendChild(o);
+document.querySelectorAll('.faq-item').forEach(item=>{
+  item.onclick=()=>{
+    const p=item.querySelector('p');
+    p.style.display=p.style.display==='block'?'none':'block';
+  }
 });
-
-function render(){
-  document.getElementById('puppies').innerHTML=puppies.filter(p=>{
-    if(fState.value&&p.state!==fState.value)return false;
-    if(fGender.value&&p.gender!==fGender.value)return false;
-    if(fColor.value&&p.color!==fColor.value)return false;
-    return true;
-  }).map(p=>`
-    <div class="card">
-      <div style="position:relative">
-        <img src="${p.img}">
-        <div class="badge">${p.gender}</div>
-      </div>
-      <div class="card-body">
-        <h3>${p.name}</h3>
-        <div>${p.city}, ${p.state}</div>
-        <div>${p.age} • ${p.color}</div>
-        <div class="price">$${p.price}</div>
-        <button class="btn btn-accent" onclick="window.open('https://wa.me/15409520705','_blank')">
-          Message About ${p.name}
-        </button>
-      </div>
-    </div>`).join('');
-}
-
-[fState,fGender,fColor].forEach(el=>el.onchange=render);
-render();
 </script>
 
 </body>
