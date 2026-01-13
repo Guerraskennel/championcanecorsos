@@ -2,270 +2,229 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Champion Cane Corsos – Find Your Cane Corso Puppy</title>
+  <title>Champion Cane Corsos – Elegant Kennel</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ethically bred Cane Corso puppies across the USA. View photos, prices, health info and contact breeders directly.">
+  <meta name="description" content="Ethically bred Cane Corso puppies. Purpose-bred for pet companions, breeding programs, and service work.">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --bg:#f8f8f8;
-      --card:#fff;
-      --accent:#c93131;
-      --dark:#222;
-      --light:#777;
-      --radius:6px;
-      --max:1200px;
+      --bg:#f7f5f2;
+      --card:#ffffff;
+      --text:#222;
+      --mute:#7d7d7d;
+      --accent:#c9a096;
+      --border:#e5e1dd;
+      --radius:12px;
+      --max:1100px;
+      --shadow:0 6px 24px rgba(0,0,0,.08);
     }
-    *{box-sizing:border-box;margin:0;padding:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial}
-    body{background:var(--bg);color:var(--dark);line-height:1.5}
-    a{color:inherit;text-decoration:none}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.7}
+    h1,h2,h3{font-family:'Playfair Display',serif}
+    section{padding:5rem 0}
+    .wrap{width:90%;max-width:var(--max);margin:auto}
     img{max-width:100%;display:block}
-    header{background:var(--accent);color:#fff;padding:1.2rem 0;position:sticky;top:0;z-index:99}
-    .wrap{width:95%;max-width:var(--max);margin:auto}
-    .top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap}
-    .logo{font-size:1.6rem;font-weight:700}
-    .social a{background:rgba(255,255,255,.2);margin-left:.4rem;padding:.4rem .7rem;border-radius:var(--radius);font-size:.8rem}
-    .hero{background:var(--card);padding:2rem 0;text-align:center}
-    .hero h1{font-size:2rem;margin-bottom:.5rem}
-    .hero p{color:var(--light)}
-    .search-bar{display:flex;gap:.5rem;margin-top:1.2rem;flex-wrap:wrap;justify-content:center}
-    .search-bar input,.search-bar select{flex:1;min-width:180px;padding:.7rem;border:1px solid #ddd;border-radius:var(--radius)}
-    .search-bar button{background:var(--accent);color:#fff;border:none;padding:0 1.2rem;border-radius:var(--radius);cursor:pointer}
-    .main{display:flex;gap:1.5rem;margin-top:2rem}
-    aside{width:260px;background:var(--card);padding:1rem;border-radius:var(--radius);height:fit-content}
-    aside h3{font-size:1.1rem;margin-bottom:.8rem}
-    aside label{font-size:.9rem;display:block;margin:.6rem 0 .3rem}
-    aside input,aside select{width:100%;padding:.5rem;border:1px solid #ddd;border-radius:var(--radius)}
-    .results{flex:1}
-    .sort-bar{background:var(--card);padding:.8rem 1rem;border-radius:var(--radius);margin-bottom:1rem;display:flex;align-items:center;justify-content:space-between;font-size:.9rem}
-    .puppies{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.2rem}
-    .card{background:var(--card);border-radius:var(--radius);overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,.08);display:flex;flex-direction:column}
-    .card img{height:200px;object-fit:cover}
-    .badge{position:absolute;top:.6rem;left:.6rem;background:var(--accent);color:#fff;padding:.2rem .6rem;border-radius:var(--radius);font-size:.7rem}
-    .body{padding:1rem;flex:1;display:flex;flex-direction:column}
-    .body h3{font-size:1.15rem;margin-bottom:.3rem}
-    .body .loc{font-size:.8rem;color:var(--light);margin-bottom:.5rem}
-    .body .info{font-size:.9rem;flex:1;margin-bottom:.8rem;color:#555}
-    .body .price{font-size:1.25rem;font-weight:700;color:var(--accent);margin-bottom:.6rem}
-    .body button{width:100%;background:var(--accent);color:#fff;border:none;padding:.6rem;border-radius:var(--radius);cursor:pointer;font-size:.9rem}
-    .no-res{text-align:center;padding:3rem;color:var(--light)}
-    footer{background:#111;color:#fff;text-align:center;padding:2rem 0;margin-top:3rem;font-size:.9rem}
-    @media(max-width:800px){
-      .main{flex-direction:column}
-      aside{width:100%}
+
+    /* HEADER */
+    header{background:var(--card);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:99}
+    header .wrap{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0}
+    nav a{margin-left:1.5rem;color:var(--mute);text-decoration:none}
+    nav a:hover{color:var(--accent)}
+
+    /* HERO */
+    .hero{text-align:center;padding:6rem 0}
+    .hero h1{font-size:3rem;margin-bottom:1rem}
+    .hero p{max-width:650px;margin:auto;color:var(--mute);font-size:1.15rem}
+    .hero-btns{margin-top:2.5rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+    /* BUTTONS */
+    .btn{padding:.9rem 1.8rem;border-radius:var(--radius);border:none;font-weight:500;cursor:pointer}
+    .btn-accent{background:var(--accent);color:#fff}
+    .btn-ghost{background:transparent;border:1px solid var(--accent);color:var(--accent)}
+    .btn:hover{opacity:.9}
+
+    /* PURPOSE SECTION */
+    .purpose-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:2rem;
+      margin-top:3rem;
     }
+    .purpose-card{
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:2.2rem;
+      transition:.3s;
+    }
+    .purpose-card:hover{
+      transform:translateY(-4px);
+      box-shadow:var(--shadow);
+    }
+    .purpose-card h3{margin-bottom:.8rem}
+    .purpose-card p{color:var(--mute);font-size:.95rem}
+    .purpose-card ul{margin-top:1.2rem;padding-left:1.2rem;font-size:.9rem}
+    .purpose-card li{margin-bottom:.4rem}
+
+    /* FILTERS */
+    .filter-bar{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:2.5rem}
+    .filter-bar select{flex:1;min-width:180px;padding:.7rem;border-radius:var(--radius);border:1px solid var(--border)}
+
+    .purpose-toggle{text-align:center;margin-bottom:2rem}
+
+    /* PUPPY CARDS */
+    .puppies{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:2rem}
+    .card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden}
+    .card img{height:250px;object-fit:cover}
+    .card-body{padding:1.5rem}
+    .badge{position:absolute;top:1rem;left:1rem;background:var(--accent);color:#fff;padding:.3rem .7rem;border-radius:var(--radius);font-size:.75rem}
+    .price{font-size:1.3rem;font-weight:600;margin:.4rem 0}
+
+    /* MODALS */
+    .modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999;align-items:center;justify-content:center}
+    .modal-content{background:#fff;padding:2rem;border-radius:var(--radius);width:90%;max-width:450px}
+    .close{float:right;font-size:1.4rem;cursor:pointer}
+
+    input,textarea,select{width:100%;padding:.8rem;margin-bottom:1rem;border-radius:var(--radius);border:1px solid var(--border)}
+    button[type=submit]{background:var(--accent);color:#fff;width:100%;padding:.8rem;border:none;border-radius:var(--radius)}
+
+    footer{background:#111;color:#fff;text-align:center;padding:2.5rem 0}
   </style>
 </head>
+
 <body>
-<!-- HEADER -->
+
 <header>
   <div class="wrap">
-    <div class="top">
-      <div class="logo">🏆 Champion Cane Corsos</div>
-      <div class="social">
-        <a href="https://facebook.com/groups/championcanecorsos" target="_blank" aria-label="Facebook">FB Group</a>
-        <a href="tel:+12345678901" aria-label="Call">Call</a>
-      </div>
-    </div>
+    <div style="font-size:1.6rem;font-family:'Playfair Display',serif">Champion Cane Corsos</div>
+    <nav>
+      <a href="#available">Available</a>
+      <a href="#purpose">Purpose</a>
+      <a href="#goal">Goal</a>
+      <a href="https://www.facebook.com/share/1Bj8Pzsq4F/" target="_blank">Facebook</a>
+    </nav>
   </div>
 </header>
 
-<!-- HERO + SEARCH -->
 <section class="hero">
   <div class="wrap">
-    <h1>Find a Cane Corso Puppy Near You</h1>
-    <p>Health-guaranteed, ICCF / AKC registered, ethically raised.</p>
-    <div class="search-bar">
-      <input type="text" id="zip" placeholder="Enter ZIP code">
-      <select id="radius">
-        <option value="25">25 miles</option>
-        <option value="50" selected>50 miles</option>
-        <option value="100">100 miles</option>
-        <option value="250">250 miles</option>
-        <option value="500">500 miles</option>
-        <option value="99999">Anywhere in USA</option>
-      </select>
-      <button onclick="filterPups()">Search</button>
+    <h1>Powerful. Loyal.<br>Correctly Bred Cane Corsos</h1>
+    <p>Purpose-bred for pet companions, breeding programs, and select service work — raised with structure, balance, and intention.</p>
+    <div class="hero-btns">
+      <a href="#available" class="btn btn-accent">Explore Puppies</a>
+      <a href="tel:+15409520705" class="btn btn-ghost">(540) 952-0705</a>
     </div>
   </div>
 </section>
 
-<!-- MAIN LAYOUT -->
-<div class="wrap">
-  <div class="main">
-    <!-- SIDEBAR FILTERS -->
-    <aside>
-      <h3>Refine Results</h3>
+<!-- PURPOSE SECTION -->
+<section id="purpose">
+  <div class="wrap">
+    <h2 class="center">Purpose-Bred for the Right Home</h2>
+    <p class="center" style="color:var(--mute);margin-top:.8rem">
+      Each puppy is evaluated for temperament, structure, and drive to ensure proper placement.
+    </p>
 
-      <label>State</label>
-      <select id="fState" onchange="filterPups()">
-        <option value="">All States</option>
-      </select>
-
-      <label>Price Range</label>
-      <select id="fPrice" onchange="filterPups()">
-        <option value="">Any</option>
-        <option value="0-2000">≤ $2 000</option>
-        <option value="2001-2500">$2 001 – $2 500</option>
-        <option value="2501-3000">$2 501 – $3 000</option>
-        <option value="3001-99999">$3 000+</option>
-      </select>
-
-      <label>Gender</label>
-      <select id="fGender" onchange="filterPups()">
-        <option value="">Both</option>
-        <option>Male</option>
-        <option>Female</option>
-      </select>
-
-      <label>Color</label>
-      <select id="fColor" onchange="filterPups()">
-        <option value="">All Colors</option>
-        <option>Black</option>
-        <option>Fawn</option>
-        <option>Brindle</option>
-        <option>Blue</option>
-        <option>Formentino</option>
-      </select>
-    </aside>
-
-    <!-- RESULTS -->
-    <div class="results">
-      <div class="sort-bar">
-        <span id="count">Showing 0 puppies</span>
-        <select id="sort" onchange="filterPups()">
-          <option value="new">Newest First</option>
-          <option value="priceLow">Price Low → High</option>
-          <option value="priceHigh">Price High → Low</option>
-        </select>
+    <div class="purpose-grid">
+      <div class="purpose-card">
+        <h3>Pet Companion</h3>
+        <p>Stable, confident Cane Corsos suited for family homes seeking loyalty and guardian presence.</p>
+        <ul>
+          <li>✔ Balanced temperament</li>
+          <li>✔ Home-raised environment</li>
+          <li>✔ Lifetime breeder support</li>
+        </ul>
       </div>
-      <div id="puppies" class="puppies"></div>
-      <div id="noRes" class="no-res" style="display:none">No puppies match your filters—try widening the search.</div>
+
+      <div class="purpose-card">
+        <h3>Breeding Prospect</h3>
+        <p>Select puppies evaluated for structure and genetics for responsible breeding programs.</p>
+        <ul>
+          <li>✔ Structure & temperament reviewed</li>
+          <li>✔ Rights by approval only</li>
+          <li>✔ Mentorship available</li>
+        </ul>
+      </div>
+
+      <div class="purpose-card">
+        <h3>Service / Working Candidate</h3>
+        <p>Puppies with confidence, focus, and nerve strength suitable for advanced training paths.</p>
+        <ul>
+          <li>✔ ENS & early exposure</li>
+          <li>✔ Placement-based selection</li>
+          <li>✔ Temperament-first approach</li>
+        </ul>
+      </div>
     </div>
   </div>
-</div>
+</section>
 
-<!-- FOOTER -->
+<section id="available">
+  <div class="wrap">
+    <h2 style="text-align:center">Available Puppies</h2>
+
+    <div class="filter-bar">
+      <select id="fState"><option value="">All States</option></select>
+      <select id="fGender"><option value="">Both Genders</option><option>Male</option><option>Female</option></select>
+      <select id="fColor"><option value="">All Colors</option><option>Straw (Fawn)</option><option>Black</option></select>
+    </div>
+
+    <div id="puppies" class="puppies"></div>
+  </div>
+</section>
+
 <footer>
-  © <span id="yr"></span> Champion Cane Corsos &nbsp;|&nbsp;
-  <a href="tel:+12345678901" style="color:#fff">(123) 456-7890</a> &nbsp;|&nbsp;
-  <a href="mailto:puppies@championcanecorsos.com" style="color:#fff">puppies@championcanecorsos.com</a>
+  © Champion Cane Corsos · Virginia<br>
+  <a href="tel:+15409520705">(540) 952-0705</a>
 </footer>
 
-<!-- CONTACT MODAL (hidden by default) -->
-<div id="modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:999;align-items:center;justify-content:center">
-  <div style="background:#fff;width:92%;max-width:420px;border-radius:6px;padding:1.8rem">
-    <span style="float:right;font-size:1.4rem;cursor:pointer" onclick="closeModal()">&times;</span>
-    <h3 id="mtitle"></h3>
-    <form onsubmit="sendLead(event)">
-      <input name="yourName" placeholder="Your Name" required>
-      <input name="yourPhone" placeholder="Phone Number" required>
-      <input name="yourEmail" placeholder="Email" required>
-      <textarea name="yourMsg" rows="4" placeholder="Message (optional)"></textarea>
-      <button style="width:100%;background:var(--accent);color:#fff;border:none;padding:.6rem;border-radius:var(--radius);cursor:pointer">Send to Breeder</button>
-    </form>
-  </div>
-</div>
-
 <script>
-  // --------------- DATA ---------------
-  const puppies = [
-    {name:"Luna",state:"NC",city:"Charlotte",zip:"28205",gender:"Female",color:"Fawn",age:"9 weeks",price:2400,img:"pics/luna1.jpg",desc:"Tail docked, ICCF reg., calm family temperament.",date:"2026-01-10"},
-    {name:"Zeus",state:"VA",city:"Richmond",zip:"23224",gender:"Male",color:"Black",age:"11 weeks",price:2700,img:"pics/zeus1.jpg",desc:"Champion sire, OFA parents, show potential.",date:"2026-01-08"},
-    {name:"Nova",state:"MS",city:"Jackson",zip:"39201",gender:"Female",color:"Blue Brindle",age:"12 weeks",price:2200,img:"pics/nova1.jpg",desc:"Micro-chipped, raised with kids.",date:"2026-01-07"},
-    {name:"Axel",state:"TN",city:"Nashville",zip:"37201",gender:"Male",color:"Brindle",age:"10 weeks",price:2500,img:"pics/axel1.jpg",desc:"Black mask, first shots, health guarantee.",date:"2026-01-09"},
-    {name:"Rio",state:"AL",city:"Birmingham",zip:"35203",gender:"Male",color:"Fawn",age:"8 weeks",price:2300,img:"pics/rio1.jpg",desc:"Parents on site, socialized daily.",date:"2026-01-11"},
-    {name:"Bella",state:"FL",city:"Orlando",zip:"32801",gender:"Female",color:"Formentino",age:"9 weeks",price:2600,img:"pics/bella1.jpg",desc:"Rare color, ICCF, vet checked.",date:"2026-01-06"},
-    {name:"Diesel",state:"TX",city:"Dallas",zip:"75201",gender:"Male",color:"Blue",age:"13 weeks",price:2800,img:"pics/diesel1.jpg",desc:"Big bone structure, crate trained.",date:"2026-01-05"},
-    {name:"Stella",state:"OH",city:"Columbus",zip:"43201",gender:"Female",color:"Black",age:"10 weeks",price:2450,img:"pics/stella1.jpg",desc:"Super social, starter pack included.",date:"2026-01-12"}
-  ];
+const puppies=[
+  {name:"Luna",state:"VA",city:"Richmond",gender:"Female",color:"Straw (Fawn)",age:"9 weeks",price:1500,img:"pics/luna1.jpg"},
+  {name:"Zeus",state:"NC",city:"Charlotte",gender:"Male",color:"Black",age:"11 weeks",price:1500,img:"pics/zeus1.jpg"}
+];
 
-  // --------------- STATE DROP-DOWN ---------------
-  const states={
-    AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",CO:"Colorado",CT:"Connecticut",DE:"Delaware",FL:"Florida",GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",WI:"Wisconsin",WY:"Wyoming"
-  };
-  const stSel=document.getElementById('fState');
-  for(const [abbr,name] of Object.entries(states)){
-    const o=document.createElement('option'); o.value=abbr; o.textContent=name; stSel.appendChild(o);
-  }
+const states={VA:"Virginia",NC:"North Carolina"};
+const fState=document.getElementById('fState');
+const fGender=document.getElementById('fGender');
+const fColor=document.getElementById('fColor');
 
-  // --------------- RENDER & FILTER ---------------
-  let filtered=[...puppies];
-  function render(){
-    const grid=document.getElementById('puppies');
-    const noRes=document.getElementById('noRes');
-    const count=document.getElementById('count');
-    if(!filtered.length){ grid.innerHTML=''; noRes.style.display='block'; count.textContent='No puppies found'; return;}
-    noRes.style.display='none';
-    count.textContent=`Showing ${filtered.length} puppy${filtered.length>1?'ies':''}`;
-    grid.innerHTML=filtered.map(p=>`
-      <div class="card">
-        <div style="position:relative">
-          <img src="${p.img}" alt="${p.name}">
-          <div class="badge">${p.gender}</div>
-        </div>
-        <div class="body">
-          <h3>${p.name}</h3>
-          <div class="loc">${p.city}, ${p.state}</div>
-          <div class="info">${p.age} &nbsp;•&nbsp; ${p.color}<br>${p.desc}</div>
-          <div class="price">$${p.price.toLocaleString()}</div>
-          <button onclick="openModal('${p.name}','${p.state}','${p.city}')">Contact About ${p.name}</button>
-        </div>
-      </div>`).join('');
-  }
+Object.entries(states).forEach(([k,v])=>{
+  const o=document.createElement('option');
+  o.value=k;o.textContent=v;
+  fState.appendChild(o);
+});
 
-  function filterPups(){
-    const z=document.getElementById('zip').value.trim();
-    const rad=parseInt(document.getElementById('radius').value);
-    const fSt=document.getElementById('fState').value;
-    const fGen=document.getElementById('fGender').value;
-    const fCol=document.getElementById('fColor').value;
-    const fPr=document.getElementById('fPrice').value;
-    const sort=document.getElementById('sort').value;
+function render(){
+  document.getElementById('puppies').innerHTML=puppies.filter(p=>{
+    if(fState.value&&p.state!==fState.value)return false;
+    if(fGender.value&&p.gender!==fGender.value)return false;
+    if(fColor.value&&p.color!==fColor.value)return false;
+    return true;
+  }).map(p=>`
+    <div class="card">
+      <div style="position:relative">
+        <img src="${p.img}">
+        <div class="badge">${p.gender}</div>
+      </div>
+      <div class="card-body">
+        <h3>${p.name}</h3>
+        <div>${p.city}, ${p.state}</div>
+        <div>${p.age} • ${p.color}</div>
+        <div class="price">$${p.price}</div>
+        <button class="btn btn-accent" onclick="window.open('https://wa.me/15409520705','_blank')">
+          Message About ${p.name}
+        </button>
+      </div>
+    </div>`).join('');
+}
 
-    filtered=puppies.filter(p=>{
-      if(fSt && p.state!==fSt) return false;
-      if(fGen && p.gender!==fGen) return false;
-      if(fCol && p.color!==fCol) return false;
-      if(fPr){
-        const [min,max]=fPr.split('-').map(Number);
-        if(p.price<min||p.price>max) return false;
-      }
-      if(z&&rad<99999){
-        // simple distance via zip-table not included; here we fake-accept
-        // in real life plug in zip-code-to-coords API
-        return true;
-      }
-      return true;
-    });
-
-    // sort
-    if(sort==='priceLow') filtered.sort((a,b)=>a.price-b.price);
-    if(sort==='priceHigh') filtered.sort((a,b)=>b.price-a.price);
-    if(sort==='new') filtered.sort((a,b)=>new Date(b.date)-new Date(a.date));
-
-    render();
-  }
-
-  // --------------- MODAL / LEAD ---------------
-  function openModal(pup,st,ct){
-    document.getElementById('mtitle').textContent=`I’m interested in ${pup} (${st} - ${ct})`;
-    document.getElementById('modal').style.display='flex';
-  }
-  function closeModal(){ document.getElementById('modal').style.display='none'; }
-  window.onclick=e=>{ if(e.target.id==='modal') closeModal(); };
-
-  function sendLead(e){
-    e.preventDefault();
-    const data=new FormData(e.target);
-    const txt=`Name: ${data.get('yourName')}%0APhone: ${data.get('yourPhone')}%0AEmail: ${data.get('yourEmail')}%0APuppy: ${document.getElementById('mtitle').textContent}%0AMessage: ${data.get('yourMsg')}`;
-    // CHANGE TO YOUR NUMBER / EMAIL
-    window.open(`https://wa.me/12345678901?text=${txt}`,'_blank');
-    closeModal();
-  }
-
-  // --------------- INIT ---------------
-  document.getElementById('yr').textContent=new Date().getFullYear();
-  filterPups(); // first draw
+[fState,fGender,fColor].forEach(el=>el.onchange=render);
+render();
 </script>
+
 </body>
 </html>
