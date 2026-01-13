@@ -11,12 +11,12 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{
---bg:#0a0a0a;--txt:#f5f5f5;
---cyan:#00eaff;--magenta:#ff1bf5;--orange:#ff7a00;--lime:#caff00;
---grad:linear-gradient(135deg,var(--cyan),var(--magenta),var(--orange),var(--lime));
+--bg:#121212;--txt:#f4f4f4;
+--gold:#d4af37;--bronze:#b87333;--ivory:#f2efe9;--deep:#1a1a1a;
+--grad:linear-gradient(135deg,var(--gold),var(--bronze));
 }
 body{margin:0;font-family:'Inter',sans-serif;background:var(--bg);color:var(--txt);line-height:1.6;overflow-x:hidden;}
-a{color:var(--cyan);text-decoration:none;}
+a{color:var(--gold);text-decoration:none;}
 header,section,footer{padding:1.5em;max-width:900px;margin:auto;}
 .skip-link{position:absolute;top:-40px;left:0;background:#000;color:#fff;padding:.5em;z-index:100;}
 .skip-link:focus{top:0;}
@@ -24,16 +24,16 @@ header,section,footer{padding:1.5em;max-width:900px;margin:auto;}
 .hero img{width:100%;max-width:600px;border-radius:8px;}
 .cta-btn{background:var(--grad);color:#000;font-weight:700;border:none;padding:.8em 1.6em;border-radius:6px;cursor:pointer;transition:transform .2s,box-shadow .2s;}
 .cta-btn:hover{transform:scale(1.05);}
-.cta-btn:focus-visible{outline:2px solid var(--lime);box-shadow:0 0 10px var(--lime);}
+.cta-btn:focus-visible{outline:2px solid var(--gold);box-shadow:0 0 10px var(--gold);}
 .banner{background:var(--grad);color:#000;text-align:center;padding:.6em;font-weight:700;}
 form{display:grid;gap:.8em;margin-top:1em;}
-input,select,textarea{padding:.6em;border:1px solid #444;border-radius:4px;background:#111;color:#fff;font:inherit;}
-input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);}
+input,select,textarea{padding:.6em;border:1px solid #555;border-radius:4px;background:#1e1e1e;color:#fff;font:inherit;}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--gold);}
 .hidden{display:none;}
-.price-box{background:#111;border:2px solid var(--cyan);padding:1em;border-radius:6px;text-align:center;margin-top:1em;}
+.price-box{background:#1b1b1b;border:2px solid var(--bronze);padding:1em;border-radius:6px;text-align:center;margin-top:1em;}
 footer{font-size:.9em;border-top:1px solid #333;margin-top:2em;padding-bottom:3em;text-align:center;}
 .testimonials{display:grid;gap:1em;}
-figure{margin:0;padding:1em;border-left:3px solid var(--magenta);background:#111;border-radius:6px;}
+figure{margin:0;padding:1em;border-left:3px solid var(--gold);background:#1b1b1b;border-radius:6px;}
 button,select,input,textarea{color-scheme:dark;}
 @media(min-width:700px){.hero{flex-direction:row;justify-content:space-between;text-align:left;}}
 @media(prefers-color-scheme:light){body{background:#fafafa;color:#111;}input,select,textarea{background:#fff;color:#000;}}
@@ -53,7 +53,7 @@ button,select,input,textarea{color-scheme:dark;}
 </header>
 <main id="main">
 <section id="priceGate" aria-label="Inquiry Form">
-<h2 style="color:var(--lime);">See Your Puppy Price</h2>
+<h2 style="color:var(--gold);">See Your Puppy Price</h2>
 <p>Select your purpose and timeline to reveal your personalized puppy pricing.</p>
 <form onsubmit="return false;">
 <label for="purpose">Purpose</label>
@@ -81,7 +81,7 @@ button,select,input,textarea{color-scheme:dark;}
 <h3>Current Puppy Price: <span id="priceValue"></span></h3>
 <p>Secure your puppy with a $500 deposit and priority waiting list placement.</p>
 </div>
-<form action="https://formsubmit.co/championscanecorso@gmail.com" method="POST">
+<form action="https://formsubmit.co/championscanecorsos@gmail.com" method="POST">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_next" value="#thankyou">
 <label for="name">Name</label><input id="name" name="name" required>
@@ -96,14 +96,14 @@ button,select,input,textarea{color-scheme:dark;}
 </div>
 </section>
 <section aria-label="Testimonials">
-<h2 style="color:var(--cyan);">Testimonials</h2>
+<h2 style="color:var(--bronze);">Testimonials</h2>
 <div class="testimonials">
 <figure><blockquote>"Our Cane Corso is majestic and gentle—beyond expectations!"</blockquote><figcaption>—Sarah M., NC</figcaption></figure>
 <figure><blockquote>"Professional breeder, stunning puppies, seamless process."</blockquote><figcaption>—James L., TN</figcaption></figure>
 </div>
 </section>
 <section aria-label="FAQ">
-<h2 style="color:var(--magenta);">FAQ</h2>
+<h2 style="color:var(--ivory);">FAQ</h2>
 <h3>Do you sell outside these states?</h3><p>We sell in NC, VA, MS, TN & AL, with shipping available nationwide.</p>
 <h3>How does the deposit work?</h3><p>A $500 deposit locks your puppy or waiting-list position, applied to the final balance.</p>
 <h3>Are your puppies health-certified?</h3><p>Yes, all puppies come with health certificates, socialization training, and lifetime support.</p>
