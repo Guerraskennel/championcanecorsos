@@ -36,68 +36,70 @@ section{padding:5rem 0}
 .btn{padding:.9rem 1.8rem;border-radius:var(--radius);border:none;font-weight:500;cursor:pointer}
 .btn-accent{background:var(--accent);color:#fff}
 
-/* PURPOSE */
-.purpose-grid{
+/* PUPPIES */
+.puppies{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:2rem;margin-top:3rem
 }
-.purpose-card{
+.card{
   background:var(--card);
   border:1px solid var(--border);
-  padding:2rem;border-radius:var(--radius);
+  border-radius:var(--radius);
+  overflow:hidden;
   transition:.3s
 }
-.purpose-card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.card img{width:100%;height:220px;object-fit:cover}
+.card-body{padding:1.5rem}
+.price{color:var(--accent);font-size:1.4rem;font-weight:600}
 
-/* TRUST SECTION */
-.trust{background:var(--green);color:#fff}
-.trust-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:2rem;margin-top:3rem
+/* FILTER */
+.filter{
+  display:flex;
+  gap:1rem;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:2rem
 }
-.trust-card{
-  background:#fff;color:#222;
-  padding:2rem;border-radius:var(--radius);
-  box-shadow:var(--shadow)
-}
-.price{font-size:2.4rem;color:var(--accent);margin:1rem 0}
-
-/* BADGES */
-.badges{
-  display:flex;flex-wrap:wrap;gap:1rem;
-  justify-content:center;margin-top:2rem
-}
-.badge{
-  background:#fff;color:#222;
-  padding:.7rem 1.2rem;border-radius:999px;
-  font-size:.85rem;font-weight:500;
-  box-shadow:var(--shadow)
+select{
+  padding:.7rem;
+  border-radius:var(--radius);
+  border:1px solid var(--border)
 }
 
-/* REVIEWS */
-.review{font-size:.95rem;color:#444}
-.review strong{display:block;margin-top:.7rem}
-
-/* FAQ */
-.faq{background:#fff}
-.faq-item{
-  border-bottom:1px solid var(--border);
-  padding:1.2rem 0;cursor:pointer
+/* MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.45);
+  z-index:999;
+  align-items:center;
+  justify-content:center
 }
-.faq-item h4{font-size:1rem}
-.faq-item p{display:none;color:var(--mute);margin-top:.6rem}
+.modal-box{
+  background:#fff;
+  padding:2rem;
+  border-radius:var(--radius);
+  width:90%;
+  max-width:400px;
+  text-align:center
+}
 
 /* FOOTER */
 footer{background:#111;color:#fff;text-align:center;padding:2.5rem 0;font-size:.9rem}
 
 /* STICKY CTA */
 .sticky{
-  position:fixed;bottom:0;left:0;right:0;
-  background:#111;color:#fff;
-  display:flex;justify-content:space-around;
-  padding:.8rem 0;z-index:999
+  position:fixed;
+  bottom:0;left:0;right:0;
+  background:#111;
+  color:#fff;
+  display:flex;
+  justify-content:space-around;
+  padding:.8rem 0;
+  z-index:999
 }
 .sticky a{color:#fff;text-decoration:none;font-weight:500}
 </style>
@@ -109,116 +111,97 @@ footer{background:#111;color:#fff;text-align:center;padding:2.5rem 0;font-size:.
 <section class="hero">
   <div class="wrap">
     <h1>Purpose-Bred Cane Corsos</h1>
-    <p>Confident guardians raised for companionship, breeding programs, and select service work.</p>
-    <button class="btn btn-accent">View Available Puppies</button>
+    <p>Ethically bred for companionship, breeding programs, and select service work.</p>
+    <button class="btn btn-accent" onclick="openStateModal()">View All Puppies</button>
   </div>
 </section>
 
-<!-- PURPOSE -->
+<!-- FILTER -->
 <section>
-  <div class="wrap">
-    <h2 class="center">Placement Categories</h2>
-    <div class="purpose-grid">
-      <div class="purpose-card">
-        <h3>Pet Companion</h3>
-        <p>Stable, confident dogs raised in a family environment with proper exposure.</p>
-      </div>
-      <div class="purpose-card">
-        <h3>Breeding Prospect</h3>
-        <p>Selected puppies evaluated for structure, genetics, and temperament.</p>
-      </div>
-      <div class="purpose-card">
-        <h3>Service / Working</h3>
-        <p>Carefully selected candidates with strong nerves and focus.</p>
-      </div>
+  <div class="wrap center">
+    <h2>Available Puppies</h2>
+
+    <div class="filter">
+      <select id="stateFilter" onchange="renderPuppies()">
+        <option value="">All States</option>
+        <option>VA</option>
+        <option>NC</option>
+        <option>FL</option>
+      </select>
     </div>
+
+    <div id="puppyGrid" class="puppies"></div>
   </div>
 </section>
 
-<!-- TRUST + PRICE + REVIEWS -->
-<section class="trust">
-  <div class="wrap">
-    <h2 class="center">Trusted Program · Transparent Pricing</h2>
-
-    <div class="badges">
-      <div class="badge">Gold Standard Breeding</div>
-      <div class="badge">Health Guarantee</div>
-      <div class="badge">Nationwide Shipping</div>
-      <div class="badge">Lifetime Support</div>
-    </div>
-
-    <div class="trust-grid">
-
-      <div class="trust-card">
-        <h3>Puppy Price</h3>
-        <div class="price">$2,200</div>
-        <ul>
-          <li>✔ Vet-checked & vaccinated</li>
-          <li>✔ Written health guarantee</li>
-          <li>✔ Ongoing breeder support</li>
-        </ul>
-      </div>
-
-      <div class="trust-card">
-        <h3>Verified Review</h3>
-        <p class="review">
-          “Professional, honest, and extremely knowledgeable. Our Corso arrived healthy and confident.”
-          <strong>— Marcus T., NC</strong>
-        </p>
-      </div>
-
-      <div class="trust-card">
-        <h3>Verified Review</h3>
-        <p class="review">
-          “You can tell these dogs are raised correctly. Temperament and structure are excellent.”
-          <strong>— Alisha R., VA</strong>
-        </p>
-      </div>
-
-    </div>
+<!-- STATE MODAL -->
+<div id="stateModal" class="modal">
+  <div class="modal-box">
+    <h3>Select Your State</h3>
+    <p style="color:var(--mute);margin:.8rem 0">
+      This helps us show availability and transport options.
+    </p>
+    <select id="modalState">
+      <option value="">View All States</option>
+      <option>VA</option>
+      <option>NC</option>
+      <option>FL</option>
+    </select>
+    <br><br>
+    <button class="btn btn-accent" onclick="applyState()">Continue</button>
   </div>
-</section>
-
-<!-- FAQ -->
-<section class="faq">
-  <div class="wrap">
-    <h2 class="center">Frequently Asked Questions</h2>
-
-    <div class="faq-item">
-      <h4>Do you offer shipping?</h4>
-      <p>Yes, nationwide ground shipping is available with trusted pet transporters.</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>Is there a health guarantee?</h4>
-      <p>All puppies come with a written health guarantee and veterinary documentation.</p>
-    </div>
-
-    <div class="faq-item">
-      <h4>Do you sell to first-time owners?</h4>
-      <p>Yes, with education and proper placement to ensure long-term success.</p>
-    </div>
-
-  </div>
-</section>
+</div>
 
 <footer>
   © Champion Cane Corsos · Serious inquiries only
 </footer>
 
-<!-- STICKY CTA -->
 <div class="sticky">
   <a href="tel:+15409520705">📞 Call</a>
   <a href="https://wa.me/15409520705">💬 WhatsApp</a>
 </div>
 
 <script>
-document.querySelectorAll('.faq-item').forEach(item=>{
-  item.onclick=()=>{
-    const p=item.querySelector('p');
-    p.style.display=p.style.display==='block'?'none':'block';
-  }
-});
+const puppies=[
+  {name:"Luna",state:"VA",price:2200,img:"https://via.placeholder.com/400x300"},
+  {name:"Zeus",state:"NC",price:2200,img:"https://via.placeholder.com/400x300"},
+  {name:"Atlas",state:"FL",price:2200,img:"https://via.placeholder.com/400x300"}
+];
+
+function renderPuppies(){
+  const state=document.getElementById('stateFilter').value;
+  const grid=document.getElementById('puppyGrid');
+  const filtered=state?puppies.filter(p=>p.state===state):puppies;
+
+  grid.innerHTML=filtered.map(p=>`
+    <div class="card">
+      <img src="${p.img}">
+      <div class="card-body">
+        <h3>${p.name}</h3>
+        <p>Location: ${p.state}</p>
+        <div class="price">$${p.price}</div>
+        <button class="btn btn-accent" onclick="contact('${p.name}')">Inquire</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+function contact(name){
+  window.open(`https://wa.me/15409520705?text=I'm interested in ${name}`,'_blank');
+}
+
+function openStateModal(){
+  document.getElementById('stateModal').style.display='flex';
+}
+
+function applyState(){
+  const state=document.getElementById('modalState').value;
+  document.getElementById('stateFilter').value=state;
+  document.getElementById('stateModal').style.display='none';
+  renderPuppies();
+}
+
+renderPuppies();
 </script>
 
 </body>
