@@ -9,15 +9,15 @@
 
 <style>
 :root{
-  --bg:#f5f6f4;
+  --bg:#f6f7f5;
   --card:#ffffff;
   --text:#1f1f1f;
-  --mute:#6e6e6e;
-  --accent:#b89b5e;
-  --green:#1f3d2b;
-  --border:#e3e1dc;
+  --mute:#6f6f6f;
+  --accent:#b79b5b;
+  --dark:#14261c;
+  --border:#e4e2dd;
   --radius:12px;
-  --shadow:0 6px 22px rgba(0,0,0,.08);
+  --shadow:0 6px 24px rgba(0,0,0,.08);
   --max:1100px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
@@ -26,98 +26,79 @@ h1,h2,h3{font-family:'Playfair Display',serif}
 section{padding:5rem 0}
 .wrap{width:90%;max-width:var(--max);margin:auto}
 .center{text-align:center}
+p{color:var(--mute)}
+
+/* HEADER */
+header{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:0;z-index:999}
+header .wrap{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0}
+nav a{margin-left:1.2rem;color:var(--mute);text-decoration:none;font-weight:500}
+nav a:hover{color:var(--accent)}
 
 /* HERO */
 .hero{text-align:center;padding:6rem 0}
 .hero h1{font-size:3rem}
-.hero p{color:var(--mute);max-width:650px;margin:1rem auto}
-
-/* BUTTONS */
+.hero p{max-width:650px;margin:1rem auto}
 .btn{padding:.9rem 1.8rem;border-radius:var(--radius);border:none;font-weight:500;cursor:pointer}
 .btn-accent{background:var(--accent);color:#fff}
 
 /* PUPPIES */
-.puppies{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:2rem;margin-top:3rem
-}
-.card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  overflow:hidden;
-  transition:.3s
-}
+.puppies{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:2rem;margin-top:3rem}
+.card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:.3s}
 .card:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
 .card img{width:100%;height:220px;object-fit:cover}
 .card-body{padding:1.5rem}
 .price{color:var(--accent);font-size:1.4rem;font-weight:600}
 
 /* FILTER */
-.filter{
-  display:flex;
-  gap:1rem;
-  justify-content:center;
-  flex-wrap:wrap;
-  margin-top:2rem
-}
-select{
-  padding:.7rem;
-  border-radius:var(--radius);
-  border:1px solid var(--border)
-}
+.filter{display:flex;justify-content:center;gap:1rem;margin-top:2rem}
+select{padding:.7rem;border-radius:var(--radius);border:1px solid var(--border)}
 
-/* MODAL */
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.45);
-  z-index:999;
-  align-items:center;
-  justify-content:center
-}
-.modal-box{
-  background:#fff;
-  padding:2rem;
-  border-radius:var(--radius);
-  width:90%;
-  max-width:400px;
-  text-align:center
-}
+/* INFO GRID */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem}
+.info-card{background:#fff;border:1px solid var(--border);padding:2rem;border-radius:var(--radius);text-align:center}
+
+/* TESTIMONIALS */
+.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;margin-top:3rem}
+.quote{background:#fff;border:1px solid var(--border);padding:2rem;border-radius:var(--radius)}
 
 /* FOOTER */
-footer{background:#111;color:#fff;text-align:center;padding:2.5rem 0;font-size:.9rem}
+footer{background:#111;color:#fff;text-align:center;padding:3rem 1rem}
+footer a{color:var(--accent);text-decoration:none}
 
-/* STICKY CTA */
-.sticky{
-  position:fixed;
-  bottom:0;left:0;right:0;
-  background:#111;
-  color:#fff;
-  display:flex;
-  justify-content:space-around;
-  padding:.8rem 0;
-  z-index:999
-}
+/* MODAL */
+.modal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.5);z-index:999;align-items:center;justify-content:center}
+.modal-box{background:#fff;padding:2rem;border-radius:var(--radius);width:90%;max-width:400px}
+
+/* STICKY */
+.sticky{position:fixed;bottom:0;left:0;right:0;background:#111;color:#fff;display:flex;justify-content:space-around;padding:.9rem 0}
 .sticky a{color:#fff;text-decoration:none;font-weight:500}
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<header>
+  <div class="wrap">
+    <strong>Champion Cane Corsos</strong>
+    <nav>
+      <a href="#available">Puppies</a>
+      <a href="#about">About</a>
+      <a href="#health">Health</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
 <section class="hero">
   <div class="wrap">
     <h1>Purpose-Bred Cane Corsos</h1>
-    <p>Ethically bred for companionship, breeding programs, and select service work.</p>
-    <button class="btn btn-accent" onclick="openStateModal()">View All Puppies</button>
+    <p>Raised for companionship, breeding programs, and select service work. Serious homes only.</p>
+    <button class="btn btn-accent" onclick="openModal()">View Available Puppies</button>
   </div>
 </section>
 
-<!-- FILTER -->
-<section>
+<section id="available">
   <div class="wrap center">
     <h2>Available Puppies</h2>
 
@@ -134,31 +115,70 @@ footer{background:#111;color:#fff;text-align:center;padding:2.5rem 0;font-size:.
   </div>
 </section>
 
-<!-- STATE MODAL -->
-<div id="stateModal" class="modal">
-  <div class="modal-box">
-    <h3>Select Your State</h3>
-    <p style="color:var(--mute);margin:.8rem 0">
-      This helps us show availability and transport options.
+<section id="about">
+  <div class="wrap center">
+    <h2>About Us</h2>
+    <p>
+      We are a small, dedicated Cane Corso program focused on health, temperament,
+      and correct structure. Our dogs are raised in-home, exposed to children, noise,
+      and daily life to ensure confident, stable companions.
     </p>
-    <select id="modalState">
-      <option value="">View All States</option>
-      <option>VA</option>
-      <option>NC</option>
-      <option>FL</option>
-    </select>
-    <br><br>
-    <button class="btn btn-accent" onclick="applyState()">Continue</button>
   </div>
-</div>
+</section>
+
+<section id="health">
+  <div class="wrap center">
+    <h2>Health Guarantee</h2>
+    <div class="info-grid">
+      <div class="info-card">✔ Health-tested parents</div>
+      <div class="info-card">✔ Up-to-date vaccinations</div>
+      <div class="info-card">✔ Written health guarantee</div>
+      <div class="info-card">✔ Lifetime breeder support</div>
+    </div>
+  </div>
+</section>
+
+<section id="reviews">
+  <div class="wrap center">
+    <h2>What Our Families Say</h2>
+    <div class="testimonials">
+      <div class="quote">“Best dog we’ve ever owned. Calm, confident, and beautiful.”<br><strong>— Mark T.</strong></div>
+      <div class="quote">“You can tell these puppies are raised right. 10/10.”<br><strong>— Jasmine R.</strong></div>
+      <div class="quote">“Professional breeder who truly cares about the dogs.”<br><strong>— Daniel S.</strong></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap center">
+    <h2>Contact Us</h2>
+    <p>For pricing, availability, and transport details:</p>
+    <p><strong>📞 (540) 952-0705</strong></p>
+    <p><strong>💬 WhatsApp preferred</strong></p>
+  </div>
+</section>
 
 <footer>
-  © Champion Cane Corsos · Serious inquiries only
+  © Champion Cane Corsos · United States<br>
+  Serious inquiries only
 </footer>
 
 <div class="sticky">
   <a href="tel:+15409520705">📞 Call</a>
   <a href="https://wa.me/15409520705">💬 WhatsApp</a>
+</div>
+
+<div id="stateModal" class="modal">
+  <div class="modal-box center">
+    <h3>Select Your State</h3>
+    <select id="modalState">
+      <option value="">All States</option>
+      <option>VA</option>
+      <option>NC</option>
+      <option>FL</option>
+    </select><br><br>
+    <button class="btn btn-accent" onclick="applyState()">Continue</button>
+  </div>
 </div>
 
 <script>
@@ -171,9 +191,8 @@ const puppies=[
 function renderPuppies(){
   const state=document.getElementById('stateFilter').value;
   const grid=document.getElementById('puppyGrid');
-  const filtered=state?puppies.filter(p=>p.state===state):puppies;
-
-  grid.innerHTML=filtered.map(p=>`
+  const list=state?puppies.filter(p=>p.state===state):puppies;
+  grid.innerHTML=list.map(p=>`
     <div class="card">
       <img src="${p.img}">
       <div class="card-body">
@@ -189,18 +208,12 @@ function renderPuppies(){
 function contact(name){
   window.open(`https://wa.me/15409520705?text=I'm interested in ${name}`,'_blank');
 }
-
-function openStateModal(){
-  document.getElementById('stateModal').style.display='flex';
-}
-
+function openModal(){document.getElementById('stateModal').style.display='flex'}
 function applyState(){
-  const state=document.getElementById('modalState').value;
-  document.getElementById('stateFilter').value=state;
+  document.getElementById('stateFilter').value=document.getElementById('modalState').value;
   document.getElementById('stateModal').style.display='none';
   renderPuppies();
 }
-
 renderPuppies();
 </script>
 
