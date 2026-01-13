@@ -164,14 +164,14 @@ function renderPuppies(){
 }
 function openContactForm(pupName=''){
   document.getElementById('contactModal').style.display='flex';
-  if(pupName) document.querySelector('#contactModal textarea').placeholder=`I'm interested in ${pupName} - please tell us more...`;
+  if(pupName) document.querySelector('#contactModal textarea').placeholder=`I'm interested in ${p.name} - please tell us more...`;
 }
 function closeContactForm(){document.getElementById('contactModal').style.display='none';}
 function sendInquiry(e){
   e.preventDefault();
   const data=new FormData(e.target);
   const txt=`INQUIRY%0AName: ${data.get('name')}%0AEmail: ${data.get('email')}%0APhone: ${data.get('phone')}%0APurpose: ${data.get('purpose')}%0ATimeline: ${data.get('timeline')}%0AMessage: ${data.get('message')}`;
-  window.open(`https://formsubmit.co/championscanecorso@gmail.com?subject=Inquiry&text=${encodeURIComponent(txt)}&_captcha=false&_next=${encodeURIComponent(window.location.href+'#thank-you')}`,'_blank');
+  window.location=`https://formsubmit.co/championscanecorso@gmail.com?subject=Inquiry&text=${encodeURIComponent(txt)}&_captcha=false&_next=${encodeURIComponent(window.location.href+'#thank-you')}`;
   closeContactForm();
 }
 function scrollToPups(){document.getElementById('available').scrollIntoView({behavior:'smooth'});}
