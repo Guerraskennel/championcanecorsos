@@ -111,7 +111,10 @@ header{background:var(--ivory);border-bottom:1px solid var(--gold);position:stic
   <div class="modal-box">
     <span style="float:right;font-size:1.4rem;cursor:pointer" onclick="closeContactForm()">&times;</span>
     <h3>Inquiry Form</h3>
-    <form onsubmit="sendInquiry(event)">
+    <form id="inquiryForm" onsubmit="sendInquiry(event)">
+      <input type="hidden" name="_subject" value="Inquiry">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="">
       <input name="name" placeholder="Your Name" required>
       <input name="email" placeholder="Email" required>
       <input name="phone" placeholder="Phone (optional)">
@@ -164,14 +167,16 @@ function renderPuppies(){
 }
 function openContactForm(pupName=''){
   document.getElementById('contactModal').style.display='flex';
-  if(pupName) document.querySelector('#contactModal textarea').placeholder=`I'm interested in ${p.name} - please tell us more...`;
+  if(pupName) document.querySelector('#inquiryModal textarea').placeholder=`I'm interested in ${pupName} - please tell us more...`;
 }
 function closeContactForm(){document.getElementById('contactModal').style.display='none';}
 function sendInquiry(e){
   e.preventDefault();
-  const data=new FormData(e.target);
-  const txt=`INQUIRY%0AName: ${data.get('name')}%0AEmail: ${data.get('email')}%0APhone: ${data.get('phone')}%0APurpose: ${data.get('purpose')}%0ATimeline: ${data.get('timeline')}%0AMessage: ${data.get('message')}`;
-  window.location=`https://formsubmit.co/championscanecorso@gmail.com?subject=Inquiry&text=${encodeURIComponent(txt)}&_captcha=false&_next=${encodeURIComponent(window.location.href+'#thank-you')}`;
+  const f=document.getElementById('inquiryForm');
+  f._subject.value='Inquiry';
+  f._captcha.value='false';
+  f._next.value=window.location.href.split('#')[0]+'#thank-you';
+  f.submit();
   closeContactForm();
 }
 function scrollToPups(){document.getElementById('available').scrollIntoView({behavior:'smooth'});}
